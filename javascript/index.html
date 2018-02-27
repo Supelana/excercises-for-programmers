@@ -8,12 +8,23 @@
 </head>
 
 <body>
-    <button onclick="promptName();">1. Saying Hello</button>
+    <h3>1. Saying Hello</h3>
+    <button onclick="promptName()">Click me</button>
     <br>
     <br>
+
     <h3>2. Counting the Number of Characters</h3>
-    <label id="lbl_characterCount" for="characterCount">1</label>
-    <input id="characterCount" onkeypress="updateCharacterCount();"></input>
+    <button onclick="getNumberOfCharacters()">Click me</button>
+    <br>
+    <br>
+    <label id="lbl_characterCount" for="characterCount">Text length: 0</label>
+    <br>
+    <input id="characterCount" onkeyup="updateCharacterCount()"></input>
+    <br>
+    <br>
+
+    <h3>3. Printing Quotes</h3>
+    <button onclick="promptQuote()">Click me</button>
 </body>
 
 </html>

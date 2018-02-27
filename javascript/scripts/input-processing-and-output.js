@@ -4,6 +4,9 @@ function promptName() {
     switch (name) {
         case 'Allan':
         case 'Brian':
+            alert('Bad Luck ' + name);
+            break;
+        default:
             alert('Hello ' + name);
             break;
     }
@@ -21,7 +24,14 @@ function getNumberOfCharacters() {
     }
 }
 
-function updateCharacterCount(text) {
+function updateCharacterCount() {
     var currentCharCount = document.getElementById("lbl_characterCount").innerHTML;
-    document.getElementById("lbl_characterCount").innerHTML = parseInt(currentCharCount) + text.length;
+    document.getElementById("lbl_characterCount").innerHTML = 'Text length: ' + document.getElementById("characterCount").value.length;
+}
+
+// 3. Printing Quotes
+function promptQuote() {
+    var quote = prompt('What is the quote?');
+    var author = prompt('Who said it?');
+    alert(author + ' says ' + '\"' + quote + '\"');
 }
