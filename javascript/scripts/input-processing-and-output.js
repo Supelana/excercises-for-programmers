@@ -25,8 +25,8 @@ function getNumberOfCharacters() {
 }
 
 function updateCharacterCount() {
-    var currentCharCount = document.getElementById("lbl_characterCount").innerHTML;
-    document.getElementById("lbl_characterCount").innerHTML = 'Text length: ' + document.getElementById("characterCount").value.length;
+    var currentCharCount = document.getElementById("characterCount_lbl").innerHTML;
+    document.getElementById("characterCount_lbl").innerHTML = 'Text length: ' + document.getElementById("characterCount").value.length;
 }
 
 // 3. Printing Quotes
@@ -55,4 +55,15 @@ function playMadLib() {
     var adjective = prompt('Enter an adjective');
     var adverb = prompt('Enter an adverb');
     alert(`Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious`);
+}
+
+function printMadLib() {
+    var noun = document.getElementById("noun_input").value;
+    var verb = document.getElementById("verb_input").value;
+    var adjective = document.getElementById("adjective_input").value;
+    var adverb = document.getElementById("adverb_input").value;
+    
+    if (noun !== '' && verb !== '' && adjective !== '' && adverb !== '') {
+        alert(`Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious`);
+    }
 }

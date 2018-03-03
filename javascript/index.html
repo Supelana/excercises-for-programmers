@@ -17,7 +17,7 @@
     <button onclick="getNumberOfCharacters()">Click me</button>
     <br>
     <br>
-    <label id="lbl_characterCount" for="characterCount">Text length: 0</label>
+    <label id="characterCount_lbl" for="characterCount">Text length: 0</label>
     <br>
     <input id="characterCount" onkeyup="updateCharacterCount()"></input>
     <br>
@@ -27,9 +27,24 @@
     <button onclick="promptQuote()">Click me</button>
     <br>
     <br>
-    
+
     <h3>4. Mad Lib</h3>
     <button onclick="playMadLib()">Click me</button>
+    <br>
+    <label>Enter a noun (Dog)</label>
+    <input id="noun_input" onkeyup="printMadLib()"></input>
+    <br>
+    <br>
+    <label>Enter a verb (Walk)</label>
+    <input id="verb_input" onkeyup="printMadLib()"></input>
+    <br>
+    <br>
+    <label>Enter an adjective (Blue)</label>
+    <input id="adjective_input" onkeyup="printMadLib()"></input>
+    <br>
+    <br>
+    <label>Enter an adverb (Quickly)</label>
+    <input id="adverb_input" onmouseout="printMadLib()" on-release="printMadLib()"></input>
 </body>
 
 </html>
