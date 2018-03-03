@@ -17,7 +17,7 @@ function getNumberOfCharacters() {
     var text = prompt('What is the input string?');
 
     if (text === '') {
-        alert('You have to enter a text')
+        alert('You have to enter a text');
     }
     else {
         alert('The length of "' + text + '" is: ' + text.length);
@@ -31,7 +31,28 @@ function updateCharacterCount() {
 
 // 3. Printing Quotes
 function promptQuote() {
-    var quote = prompt('What is the quote?');
+    quotes = {
+        'Obi-Wan Kenobi': 'The Force will be with you. Always',
+        'Albert Einstein': 'Strive not to be a success, but rather to be of value.'
+    };
+
     var author = prompt('Who said it?');
-    alert(author + ' says ' + '\"' + quote + '\"');
+
+    if (author in quotes) {
+        alert(author + ' said ' + '\"' + quotes[author] + '\"');
+    }
+    else {
+        var quote = prompt('What is the quote?');
+        alert(author + ' said ' + '\"' + quote + '\"');
+        quotes[author] = quote;
+    }
+}
+
+// 4. Mad Lib
+function playMadLib() {
+    var noun = prompt('Enter a noun');
+    var verb = prompt('Enter a verb');
+    var adjective = prompt('Enter an adjective');
+    var adverb = prompt('Enter an adverb');
+    alert(`Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious`);
 }
