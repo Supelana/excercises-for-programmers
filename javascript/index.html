@@ -10,41 +10,40 @@
 <body>
     <h3>1. Saying Hello</h3>
     <button onclick="promptName()">Click me</button>
-    <br>
-    <br>
+    <br><br>
 
     <h3>2. Counting the Number of Characters</h3>
     <button onclick="getNumberOfCharacters()">Click me</button>
-    <br>
-    <br>
+    <br><br>
     <label id="characterCount_lbl" for="characterCount">Text length: 0</label>
     <br>
     <input id="characterCount" onkeyup="updateCharacterCount()"></input>
-    <br>
-    <br>
+    <br><br>
 
     <h3>3. Printing Quotes</h3>
     <button onclick="promptQuote()">Click me</button>
-    <br>
-    <br>
+    <br><br>
 
     <h3>4. Mad Lib</h3>
     <button onclick="playMadLib()">Click me</button>
-    <br>
-    <label>Enter a noun (Dog)</label>
-    <input id="noun_input" onkeyup="printMadLib()"></input>
-    <br>
-    <br>
-    <label>Enter a verb (Walk)</label>
-    <input id="verb_input" onkeyup="printMadLib()"></input>
-    <br>
-    <br>
-    <label>Enter an adjective (Blue)</label>
-    <input id="adjective_input" onkeyup="printMadLib()"></input>
-    <br>
-    <br>
-    <label>Enter an adverb (Quickly)</label>
-    <input id="adverb_input" onmouseout="printMadLib()" on-release="printMadLib()"></input>
+    <br><br>
+
+    <h3>5. Simple Math</h3>
+    <label>Input numbers</label><br>
+    <input id="inputOne" onkeyup="updateCharacterCount()"></input>
+    <br><br>
+    <input id="inputTwo" onkeyup="updateCharacterCount()"></input>
+    <br><br>
+    <button onclick="updateCalculations()">Click me</button>
+    <br><br>
+    <label id="addition_lbl"></label>
+    <br><br>
+    <label id="subtraction_lbl"></label>
+    <br><br>
+    <label id="times_lbl"></label>
+    <br><br>
+    <label id="division_lbl"></label>
+    <br><br>
 </body>
 
 </html>

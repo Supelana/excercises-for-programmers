@@ -57,13 +57,13 @@ function playMadLib() {
     alert(`Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious`);
 }
 
-function printMadLib() {
-    var noun = document.getElementById("noun_input").value;
-    var verb = document.getElementById("verb_input").value;
-    var adjective = document.getElementById("adjective_input").value;
-    var adverb = document.getElementById("adverb_input").value;
-    
-    if (noun !== '' && verb !== '' && adjective !== '' && adverb !== '') {
-        alert(`Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious`);
-    }
+// 5. Simple Math
+function updateCalculations(params) {
+    var inputOne = parseInt(document.getElementById("inputOne").value);
+    var inputTwo = parseInt(document.getElementById("inputTwo").value);
+
+    document.getElementById("addition_lbl").innerHTML = inputOne + ' + ' + inputTwo + ' = ' + (inputOne + inputTwo);
+    document.getElementById("subtraction_lbl").innerHTML = inputOne + ' - ' + inputTwo + ' = ' + (inputOne - inputTwo);
+    document.getElementById("times_lbl").innerHTML = inputOne + ' * ' + inputTwo + ' = ' + (inputOne * inputTwo);
+    document.getElementById("division_lbl").innerHTML = inputOne + ' / ' + inputTwo + ' = ' + (inputOne / inputTwo);
 }
