@@ -1,3 +1,8 @@
+window.onload = function () {
+    toggleShowElement(false, "calculations"); // 5. Simple Math
+    determineWhichElementToShow();            // 6. Retirement Calculator   
+}
+
 // 1. Saying Hello
 function promptName() {
     var name = prompt('What is your name?');
@@ -57,14 +62,12 @@ function playMadLib() {
 }
 
 // 5. Simple Math
-window.onload = showCalculations(false);
-
 function updateCalculations() {
     let inputOne = parseInt(document.getElementById("inputOne").value);
     let inputTwo = parseInt(document.getElementById("inputTwo").value);
     if (!inputOne || !inputTwo) {
         clearCalculations();
-        showCalculations(false);
+        toggleShowElement(false, "calculations");
         return;
     }
 
@@ -72,8 +75,8 @@ function updateCalculations() {
     document.getElementById("subtraction_lbl").innerHTML = inputOne + ' - ' + inputTwo + ' = ' + (inputOne - inputTwo);
     document.getElementById("times_lbl").innerHTML = inputOne + ' * ' + inputTwo + ' = ' + (inputOne * inputTwo);
     document.getElementById("division_lbl").innerHTML = inputOne + ' / ' + inputTwo + ' = ' + (inputOne / inputTwo);
-    
-    showCalculations(true);
+
+    toggleShowElement(true, "calculations");
 }
 
 function clearCalculations() {
@@ -83,14 +86,39 @@ function clearCalculations() {
     document.getElementById("division_lbl").innerHTML = '';
 }
 
-function showCalculations(show) {
-    var calculations = document.getElementById("calculations");
+function toggleShowElement(show, elementId) {
+    var element = document.getElementById(elementId);
     if (show) {
-        calculations.style.display = "block";        
+        element.style.display = "block";
+        return;
     }
-    else {
-        calculations.style.display = "none";
-    }
+    element.style.display = "none";
 }
 
 // 6. Retirement Calculator
+function determineWhichElementToShow() {
+    var age = document.getElementById("age_input").value;
+    toggleShowElement(age, "retirementAge");
+
+    var retirementAge = document.getElementById("retirementAge_input").value;
+    toggleShowElement(retirementAge, "retirementAge_lbl")
+
+    document.getElementById("retirementAge_lbl").innerHTML = getRetirementInfo(retirementAge);
+}
+
+function getRetirementInfo(retirementAge) {
+    if (!retirementAge) {
+        return;
+    }
+
+    return ('You have ' + getYearsToRetirement(retirementAge) + ' years left until you can retire.\n' +
+            'Its YEAR, so you can retire in ' + getRetirementYear(retirementAge));
+}
+
+function getYearsToRetirement(retirementAge) {
+
+}
+
+function getRetirementYear(retirementAge) {
+
+}
