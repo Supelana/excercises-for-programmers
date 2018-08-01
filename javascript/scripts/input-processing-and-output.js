@@ -57,16 +57,14 @@ function playMadLib() {
 }
 
 // 5. Simple Math
+window.onload = showCalculations(false);
+
 function updateCalculations() {
     let inputOne = parseInt(document.getElementById("inputOne").value);
-    if (!inputOne) {
-        clearCalculations();
-        return;
-    }
-    
     let inputTwo = parseInt(document.getElementById("inputTwo").value);
-    if (!inputTwo) {
+    if (!inputOne || !inputTwo) {
         clearCalculations();
+        showCalculations(false);
         return;
     }
 
@@ -74,6 +72,8 @@ function updateCalculations() {
     document.getElementById("subtraction_lbl").innerHTML = inputOne + ' - ' + inputTwo + ' = ' + (inputOne - inputTwo);
     document.getElementById("times_lbl").innerHTML = inputOne + ' * ' + inputTwo + ' = ' + (inputOne * inputTwo);
     document.getElementById("division_lbl").innerHTML = inputOne + ' / ' + inputTwo + ' = ' + (inputOne / inputTwo);
+    
+    showCalculations(true);
 }
 
 function clearCalculations() {
@@ -82,3 +82,15 @@ function clearCalculations() {
     document.getElementById("times_lbl").innerHTML = '';
     document.getElementById("division_lbl").innerHTML = '';
 }
+
+function showCalculations(show) {
+    var calculations = document.getElementById("calculations");
+    if (show) {
+        calculations.style.display = "block";        
+    }
+    else {
+        calculations.style.display = "none";
+    }
+}
+
+// 6. Retirement Calculator

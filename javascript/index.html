@@ -4,44 +4,59 @@
 <head>
     <meta chraset="utf-8">
     <title>My Page</title>
-    <script src="scripts/input-processing-and-output.js"></script>
 </head>
 
 <body>
     <h3>1. Saying Hello</h3>
     <button onclick="promptName()">Click me</button>
-    <br><br>
+    <br>
+    <br>
 
     <h3>2. Counting the Number of Characters</h3>
     <button onclick="getNumberOfCharacters()">Click me</button>
-    <br><br>
+    <br>
+    <br>
     <label id="characterCount_lbl" for="characterCount">Text length: 0</label>
     <br>
     <input id="characterCount" onkeyup="updateCharacterCount()"></input>
-    <br><br>
+    <br>
+    <br>
 
     <h3>3. Printing Quotes</h3>
     <button onclick="promptQuote()">Click me</button>
-    <br><br>
+    <br>
+    <br>
 
     <h3>4. Mad Lib</h3>
     <button onclick="playMadLib()">Click me</button>
-    <br><br>
+    <br>
+    <br>
 
     <h3>5. Simple Math</h3>
-    <label>Input numbers</label><br>
+    <label>Input numbers</label>
+    <br>
     <input type="number" id="inputOne" onkeyup="updateCalculations()"></input>
-    <br><br>
+    <br>
+    <br>
     <input type="number" id="inputTwo" onkeyup="updateCalculations()"></input>
-    <br><br>
-    <label id="addition_lbl"></label>
-    <br><br>
-    <label id="subtraction_lbl"></label>
-    <br><br>
-    <label id="times_lbl"></label>
-    <br><br>
-    <label id="division_lbl"></label>
-    <br><br>
+    <br>
+    <br>
+
+    <div id="calculations">
+        <label id="addition_lbl"></label>
+        <br>
+        <br>
+        <label id="subtraction_lbl"></label>
+        <br>
+        <br>
+        <label id="times_lbl"></label>
+        <br>
+        <br>
+        <label id="division_lbl"></label>
+    </div>
+
+    <h3>6. Retirement Calculator</h3>
 </body>
 
 </html>
+<script src="scripts/input-processing-and-output.js"></script>
