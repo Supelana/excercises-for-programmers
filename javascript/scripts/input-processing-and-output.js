@@ -25,7 +25,6 @@ function getNumberOfCharacters() {
 }
 
 function updateCharacterCount() {
-    var currentCharCount = document.getElementById("characterCount_lbl").innerHTML;
     document.getElementById("characterCount_lbl").innerHTML = 'Text length: ' + document.getElementById("characterCount").value.length;
 }
 
@@ -58,12 +57,28 @@ function playMadLib() {
 }
 
 // 5. Simple Math
-function updateCalculations(params) {
-    var inputOne = parseInt(document.getElementById("inputOne").value);
-    var inputTwo = parseInt(document.getElementById("inputTwo").value);
+function updateCalculations() {
+    let inputOne = parseInt(document.getElementById("inputOne").value);
+    if (!inputOne) {
+        clearCalculations();
+        return;
+    }
+    
+    let inputTwo = parseInt(document.getElementById("inputTwo").value);
+    if (!inputTwo) {
+        clearCalculations();
+        return;
+    }
 
     document.getElementById("addition_lbl").innerHTML = inputOne + ' + ' + inputTwo + ' = ' + (inputOne + inputTwo);
     document.getElementById("subtraction_lbl").innerHTML = inputOne + ' - ' + inputTwo + ' = ' + (inputOne - inputTwo);
     document.getElementById("times_lbl").innerHTML = inputOne + ' * ' + inputTwo + ' = ' + (inputOne * inputTwo);
     document.getElementById("division_lbl").innerHTML = inputOne + ' / ' + inputTwo + ' = ' + (inputOne / inputTwo);
+}
+
+function clearCalculations() {
+    document.getElementById("addition_lbl").innerHTML = '';
+    document.getElementById("subtraction_lbl").innerHTML = ''
+    document.getElementById("times_lbl").innerHTML = '';
+    document.getElementById("division_lbl").innerHTML = '';
 }
