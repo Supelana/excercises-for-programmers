@@ -1,6 +1,6 @@
 window.onload = function () {
     toggleShowElement(false, "calculations"); // 5. Simple Math
-    determineWhichElementToShow();            // 6. Retirement Calculator   
+    handleRetirementElements(); // 6. Retirement Calculator   
 }
 
 // 1. Saying Hello
@@ -87,38 +87,53 @@ function clearCalculations() {
 }
 
 function toggleShowElement(show, elementId) {
-    var element = document.getElementById(elementId);
+    let element = document.getElementById(elementId);
     if (show) {
         element.style.display = "block";
-        return;
+        return true;
     }
     element.style.display = "none";
 }
 
 // 6. Retirement Calculator
-function determineWhichElementToShow() {
-    var age = document.getElementById("age_input").value;
+function handleRetirementElements() {
+    let age = document.getElementById("age_input").value;
     toggleShowElement(age, "retirementAge");
+    resetElementValue(!age, "retirementAge_input");
 
-    var retirementAge = document.getElementById("retirementAge_input").value;
-    toggleShowElement(retirementAge, "retirementAge_lbl")
+    let retirementAge = document.getElementById("retirementAge_input").value;
+    toggleShowElement(retirementAge, "retirementAge_lbl");
 
-    document.getElementById("retirementAge_lbl").innerHTML = getRetirementInfo(retirementAge);
+    document.getElementById("retirementAge_lbl").innerHTML = getRetirementInfo(age, retirementAge);
 }
 
-function getRetirementInfo(retirementAge) {
-    if (!retirementAge) {
-        return;
+function resetElementValue(reset, elementId) {
+    if (reset) {
+        document.getElementById(elementId).value = '';
+    }
+}
+
+function getRetirementInfo(age, retirementAge) {
+    if (!age || !retirementAge) {
+        return '';
     }
 
-    return ('You have ' + getYearsToRetirement(retirementAge) + ' years left until you can retire.\n' +
-            'Its YEAR, so you can retire in ' + getRetirementYear(retirementAge));
+    let currentYear = new Date().getFullYear();
+    let retirementYear = getRetirementYear(age, retirementAge, currentYear);
+
+    if (age > retirementAge) {
+        return `Its ${currentYear}, you could have retired in ${retirementYear}...`;
+    }
+
+    let yearsToRetirement = getYearsToRetirement(age, retirementAge, currentYear);
+    return `You have ${yearsToRetirement} years left until you can retire.\n 
+            Its ${currentYear}, so you can retire in ${retirementYear}`;
 }
 
-function getYearsToRetirement(retirementAge) {
-
+function getYearsToRetirement(age, retirementAge, currentYear) {
+    return getRetirementYear(age, retirementAge, currentYear) - currentYear;
 }
 
-function getRetirementYear(retirementAge) {
-
+function getRetirementYear(age, retirementAge, currentYear) {
+    return currentYear + (retirementAge - age);
 }

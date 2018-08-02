@@ -35,10 +35,10 @@
     <h3>5. Simple Math</h3>
     <label>Input numbers</label>
     <br>
-    <input type="number" id="inputOne" onkeyup="updateCalculations()"></input>
+    <input type="number" min="1" id="inputOne" onkeyup="updateCalculations()"></input>
     <br>
     <br>
-    <input type="number" id="inputTwo" onkeyup="updateCalculations()"></input>
+    <input type="number" min="1" id="inputTwo" onkeyup="updateCalculations()"></input>
     <br>
     <br>
 
@@ -59,13 +59,13 @@
     <div id="age">
         <label>What is your current age?</label>
         <br>
-        <input id="age_input" type="number" onkeyup="determineWhichElementToShow()">
+        <input id="age_input" type="number" min="1" onkeyup="handleRetirementElements()">
     </div>
     <br>
     <div id="retirementAge">
         <label>At what age would you like to retire?</label>
         <br>
-        <input id="retirementAge_input" type="number" onkeyup="determineWhichElementToShow()">
+        <input id="retirementAge_input" type="number" min="1" onkeyup="handleRetirementElements()">
         <br>
         <br>
     </div>
