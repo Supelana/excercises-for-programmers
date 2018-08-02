@@ -86,15 +86,6 @@ function clearCalculations() {
     document.getElementById("division_lbl").innerHTML = '';
 }
 
-function toggleShowElement(show, elementId) {
-    let element = document.getElementById(elementId);
-    if (show) {
-        element.style.display = "block";
-        return true;
-    }
-    element.style.display = "none";
-}
-
 // 6. Retirement Calculator
 function handleRetirementElements() {
     let age = document.getElementById("age_input").value;
@@ -105,12 +96,6 @@ function handleRetirementElements() {
     toggleShowElement(retirementAge, "retirementAge_lbl");
 
     document.getElementById("retirementAge_lbl").innerHTML = getRetirementInfo(age, retirementAge);
-}
-
-function resetElementValue(reset, elementId) {
-    if (reset) {
-        document.getElementById(elementId).value = '';
-    }
 }
 
 function getRetirementInfo(age, retirementAge) {
