@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta chraset="utf-8">
+    <title>Input, Processing, and Output</title>
+</head>
+
+<body>
+    <h3>1. Saying Hello</h3>
+    <button onclick="promptName()">Click me</button>
+    <br>
+    <br>
+
+    <h3>2. Counting the Number of Characters</h3>
+    <button onclick="getNumberOfCharacters()">Click me</button>
+    <br>
+    <br>
+    <label id="characterCount_lbl" for="characterCount">Text length: 0</label>
+    <br>
+    <input id="characterCount" onkeyup="updateCharacterCount()"></input>
+    <br>
+    <br>
+
+    <h3>3. Printing Quotes</h3>
+    <button onclick="promptQuote()">Click me</button>
+    <br>
+    <br>
+
+    <h3>4. Mad Lib</h3>
+    <button onclick="playMadLib()">Click me</button>
+    <br>
+    <br>
+
+    <h3>5. Simple Math</h3>
+    <label>Input numbers</label>
+    <br>
+    <input type="number" min="1" id="inputOne" onkeyup="updateCalculations()"></input>
+    <br>
+    <br>
+    <input type="number" min="1" id="inputTwo" onkeyup="updateCalculations()"></input>
+    <br>
+    <br>
+
+    <div id="calculations">
+        <label id="addition_lbl"></label>
+        <br>
+        <br>
+        <label id="subtraction_lbl"></label>
+        <br>
+        <br>
+        <label id="times_lbl"></label>
+        <br>
+        <br>
+        <label id="division_lbl"></label>
+    </div>
+
+    <h3>6. Retirement Calculator</h3>
+    <div id="age">
+        <label>What is your current age?</label>
+        <br>
+        <input id="age_input" type="number" min="1" onkeyup="handleRetirementElements()">
+    </div>
+    <br>
+    <div id="retirementAge">
+        <label>At what age would you like to retire?</label>
+        <br>
+        <input id="retirementAge_input" type="number" min="1" onkeyup="handleRetirementElements()">
+        <br>
+        <br>
+    </div>
+
+    <label id="retirementAge_lbl"></label>
+</body>
+
+</html>
+<script src="scripts/input-processing-and-output.js"></script>
