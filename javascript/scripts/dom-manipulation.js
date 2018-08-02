@@ -12,3 +12,8 @@ function resetElementValue(reset, elementId) {
         document.getElementById(elementId).value = '';
     }
 }
+
+function getSelectedOption(elementId) {
+    let unitSelect = document.getElementById(elementId);
+    return unitSelect.options[unitSelect.selectedIndex];
+}

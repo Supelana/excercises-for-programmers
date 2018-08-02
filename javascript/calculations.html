@@ -10,23 +10,33 @@
 
 <body>
     <h3>7. Area of a Rectangular Room</h3>
-    <div id="age">
-        <label>What is your current age?</label>
+    <label>Pick a unit</label>
+    <br>
+    <select id="unit_select">
+        <option value="meter">Meter</option>
+        <option value="feet">Feet</option>
+    </select>
+    <br>
+    <br>
+
+    <div id="length">
+        <label>What is the length of the room in feet?</label>
         <br>
-        <input id="age_input" type="number" min="1" onkeyup="handleRetirementElements()">
+        <input id="length_input" type="number" min="1" onkeyup="calculateArea()">
     </div>
     <br>
-    <div id="retirementAge">
-        <label>At what age would you like to retire?</label>
+    <div id="width">
+        <label>What is the width of the room in feet?</label>
         <br>
-        <input id="retirementAge_input" type="number" min="1" onkeyup="handleRetirementElements()">
+        <input id="width_input" type="number" min="1" onkeyup="calculateArea()">
         <br>
         <br>
     </div>
 
-    <label id="retirementAge_lbl"></label>
+    <label id="area_lbl"></label>
 </body>
 
 </html>
+
 <script src="scripts/dom-manipulation.js"></script>
 <script src="scripts/calculations.js"></script>
