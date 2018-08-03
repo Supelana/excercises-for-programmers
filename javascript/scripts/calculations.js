@@ -1,4 +1,4 @@
-window.onload = calculateNoOfPizzas();
+window.onload = calculateRequiredGallonsOfPaint();
 
 // 7. Area of a Rectangular Room
 function calculateArea() {
@@ -43,4 +43,22 @@ function calculateNoOfPizzas() {
         document.getElementById("pizzaParty_lbl").innerHTML = '';
         return;
     }
+}
+
+// 9. Paint Calculator
+function calculateRequiredGallonsOfPaint() {
+    let paintLbl = document.getElementById("paint_lbl");
+    let length = document.getElementById("ceilingLength_input").value;
+    let width = document.getElementById("ceilingWidth_input").value;
+    if (!length || !width) {
+        paintLbl.innerHTML = '';
+        return;
+    }
+
+    const conversionFactor = 0.09290304;
+    const squareFeetPerGallon = 350;
+    let area = Math.ceil(conversionFactor * (length * width));
+    let requiredGallons = Math.ceil(area / squareFeetPerGallon);
+
+    paintLbl.innerHTML = `You will to purchase ${requiredGallons} gallons of paint to cover ${area} square feet`;
 }
