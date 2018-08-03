@@ -19,21 +19,34 @@
     <br>
     <br>
 
-    <div id="length">
-        <label>What is the length of the room in feet?</label>
-        <br>
-        <input id="length_input" type="number" min="1" onkeyup="calculateArea()">
-    </div>
+    <label>What is the length of the room in feet?</label>
     <br>
-    <div id="width">
-        <label>What is the width of the room in feet?</label>
-        <br>
-        <input id="width_input" type="number" min="1" onkeyup="calculateArea()">
-        <br>
-        <br>
-    </div>
+    <input id="length_input" type="number" min="1" onkeyup="calculateArea()">
+    <br>
+    <br>
+    
+    <label>What is the width of the room in feet?</label>
+    <br>
+    <input id="width_input" type="number" min="1" onkeyup="calculateArea()">
+    <br>
+    <br>
 
     <label id="area_lbl"></label>
+
+    <h3>8. Pizza Party</h3>
+    <label>How many people?</label>
+    <br>
+    <input id="noOfPeople_input" type="number" min="1" onkeyup="calculateNoOfPizzas()">
+    <br>
+    <br>
+    
+    <label>How many pizzas do you have?</label>
+    <br>
+    <input id="noOfPizzas_input" type="number" min="1" onkeyup="calculateNoOfPizzas()">
+    <br>
+    <br>
+
+    <label id="pizzaParty_lbl"></label>
 </body>
 
 </html>

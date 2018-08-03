@@ -1,3 +1,6 @@
+window.onload = calculateNoOfPizzas();
+
+// 7. Area of a Rectangular Room
 function calculateArea() {
     let length = document.getElementById("length_input").value;
     let width = document.getElementById("width_input").value;
@@ -30,4 +33,14 @@ function setAreaLbl(area) {
             break;
     }
     areaLbl.innerHTML = resultMessage;
+}
+
+// 8. Pizza Party
+function calculateNoOfPizzas() {
+    let noOfPeople = document.getElementById("noOfPeople_input").value;
+    let noOfPizzas = document.getElementById("noOfPizzas_input").value;
+    if (!noOfPeople || !noOfPizzas) {
+        document.getElementById("pizzaParty_lbl").innerHTML = '';
+        return;
+    }
 }
